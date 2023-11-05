@@ -92,7 +92,7 @@ void ClearVector(vector<Vector2>& stockPos)
 
 int main(int argc, char* argv[])
 {
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Declaration de tout les element dont on a besoin pour le jeu~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Declaration de tous les elements dont on a besoin pour le jeu~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     int i;
     // Initialisation de la fen�tre et du mode graphique
     #define largeurEcran 800
