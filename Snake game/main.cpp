@@ -92,7 +92,7 @@ void ClearVector(vector<Vector2>& stockPos)
 
 int main(int argc, char* argv[])
 {
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~D�claration de tout les element d'en on a besoin pour le jeu~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Declaration de tout les element dont on a besoin pour le jeu~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     int i;
     // Initialisation de la fen�tre et du mode graphique
     #define largeurEcran 800
@@ -107,13 +107,12 @@ int main(int argc, char* argv[])
     Vector2 dimSnake({ largeurSnake,longeurSnake });
     vector<Snake> snake;
 
-    snake.push_back(Snake());// La tete 
+    snake.push_back(Snake()); // La tete 
 
     for (i=1;i <= 14;i++) // Le reste du corp
-    {
         snake.push_back(Snake({ snake[i - 1].DonnePos().x,snake[i - 1].DonnePos().y }, { snake[i - 1].DonneVit().x,snake[i - 1].DonneVit().y }, dimSnake));
-    }
 
+    // Declaration des listes chainee qui servent a stocker les coordonnees ou le reste du serpent doit tourner
     vector<Vector2> stockPosZ(1, { -10,-10 });
     vector<Vector2> stockPosS(1, { -10,-10 });
     vector<Vector2> stockPosQ(1, { -10,-10 });
@@ -124,12 +123,13 @@ int main(int argc, char* argv[])
     bool pomme(false);
     Vector2 Coor_Pomme = { 200,200 };
 
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Boucle Pricipal Du Jeu~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     bool perdu = false;
     int score = 0;
     string scoreAffiche;
     int time = 0;
     int menu = 0;
+    
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Boucle Pricipal Du Jeu~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     while (!WindowShouldClose())
     {
         if (menu == 1)
@@ -166,8 +166,8 @@ int main(int argc, char* argv[])
             {   
                 if (snake.size() > 15)
                 {   
-                    // Je supprime volontairement les 
-                    if (time >= 3)
+                    // On diminue la taille du serpent avant le restart de la game
+                    if (time >= 3) // on met du delais avant chaque suppression pour faire un truc stylé
                     {
                         snake.pop_back();
                         time = 0;
