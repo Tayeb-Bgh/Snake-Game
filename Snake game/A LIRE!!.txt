@@ -1,0 +1,21 @@
+Pour jouer :
+	-Ouvrez "Snake.exe" .
+
+Pour voir le code :
+	-Ouvrez "main.cpp" .
+
+Pour Compiler le code :
+	1-Telecharger la bibliotheque Raylib via se lien : https://www.raylib.com
+	2-La configurer sur votre IDE.
+	3-Compiler le code dans : main.cpp
+
+Information sur le jeu :
+	-Pour ce deplacer : 
+		-touche "Z" pour aller en haut.
+		-touche "S" pour aller en bas.
+		-touche "Q" pour aller a gauche.
+		-touche "D' pour aller a droite.
+
+	-Objectif du jeu :
+		-Mangez les pommes rouges à l'écran pour agrandir votre serpent autant que possible tout en évitant de vous toucher la queue, sinon vous perdez.
+
